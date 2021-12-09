@@ -1,0 +1,96 @@
+@import "./mixin.scss";
+@import "./variables";
+.notify_count {
+  text-align: center;
+  color: white;
+  border: 1px solid black;
+  background-color: #cf2a27;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  padding-top: 5px;
+  display: block;
+}
+//button start
+.details {
+  border: 1px solid black;
+  background-color: #2b78e4;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+}
+.add_promotion {
+  border: 1px solid black;
+  background-color: #2b78e4;
+  color: #fff;
+}
+
+.btn {
+  padding: 5px 10px;
+}
+.btn-primary {
+  background-color: #40bfff;
+  border-radius: 5px;
+  color: #fff;
+  &:hover {
+    background-color: darken($color: #3387f2, $amount: 10%);
+  }
+}
+.btn-white {
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #000000;
+  border: 1px solid;
+  &:hover {
+    background-color: darken($color: #ffffff, $amount: 10%);
+  }
+}
+.btn-gray {
+  background-color: #F0ECE3;
+  border-radius: 5px;
+  color: #000000;
+  border: none;
+  &:hover {
+    background-color: darken($color: #F0ECE3, $amount: 10%);
+  }
+}
+//button end
+//border radius started
+.radius-3 {
+  border-radius: 3px;
+}
+.radius-5 {
+  border-radius: 5px;
+}
+
+//border radius end
+//border started
+.border-ccc {
+  border: 1px solid #ccc;
+}
+.border-black {
+  border: 1px solid black;
+}
+.border-bottom-ccc {
+  border-bottom: 2px solid #ccc;
+}
+.border-top-bottom-ccc {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+//border end
+.text-white {
+  color: #fff;
+}
+
+
+//text-area css start
+.text__area--section{
+  textarea{
+    border: 1px solid;
+    padding: 5px;
+    width: 100%;
+    text-align: justify;
+  }
+}
+//text-area css end
