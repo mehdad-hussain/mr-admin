@@ -1,150 +1,124 @@
 import React from "react";
 import Link from "next/link";
 
-import styles from "../styles/Sidebar.module.scss";
+import styles from "../styles/sidebar.module.scss";
+import Button from "./Button";
 
 function sidebar() {
   return (
     <>
-      <div className={(styles.column, styles.left, styles.sidebar)}>
+      <div className={styles.sidebar}>
         <div className={styles.sidebarBrand}>
-          <h1>
+          <h2>
             <span className=''></span>TheMarketPlace
-          </h1>
+          </h2>
         </div>
-        <div className={styles.userWrapper}>
-          <img
-            src='https://www.w3schools.com/howto/img_avatar.png'
-            alt='admin-image'
-          />
-          <div className=''>
-            <h4>John Doe</h4>
-            <small>Admin</small>
-          </div>
-        </div>
+
         <div className={styles.sidebarMenu}>
           <div className=''>
             <ul>
               <li>
                 <Link href='/dashboard'>
-                  <a>
-                    <span className=''></span>Dashboard
+                  <a className={styles.active}>
+                    <span className=''></span>
+                    <span>Dashboard</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Seller Management
+                    <span className=''></span>
+                    <span>Seller</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Customer Management
+                    <span className=''></span>
+                    <span>Customer</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Product Management
+                    <span className=''></span>
+                    <span>Product</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Order Management
+                    <span className=''></span>
+                    <span>Order</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Review
+                    <span className=''></span>
+                    <span>Return</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Return Management
+                    <span className=''></span>
+                    <span>Transaction</span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href='path'>
                   <a>
-                    <span className=''></span>Transaction Management
+                    <span className=''></span>
+                    <span>Reviews & Ratings</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href='path'>
+                  <a>
+                    <span className=''></span>
+                    <span>Commission</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href='path'>
+                  <a>
+                    <span className=''></span>
+                    <span>Promotions</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href='path'>
+                  <a>
+                    <span className=''></span>
+                    <span>Subscriptions</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href='path'>
+                  <a>
+                    <span className=''></span>
+                    <span>Contracts</span>
                   </a>
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className={styles.settingSection}>
-          <p>
-            <span className=''></span>Settings
-          </p>
-          <ul>
-            <li>
-              <Link href='path'>
-                <a>Profile Settings</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='path'>
-                <a>Social Settings</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='path'>
-                <a>Payment Settings</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <button className={`btn btn-gray ${styles.logoutBtn}`}>Logout</button>
       </div>
     </>
   );
 }
 
 export default sidebar;
-
-{
-  /* <div className={styles.sidenav}>
-        <h3 className='ml-40 mt-5 mb-5'>TheMarketPlace</h3>
-        <div className='ml-20 mt-5 mb-5 p-10'>
-          <img src='' alt='' />
-          <p>William</p>
-          <small>Sales Manager</small>
-        </div>
-        <button className={styles.dropdownBtn}>
-          <i className={styles.faCaretDown} />
-          Dashboard
-        </button>
-        <div className={styles.dropdownContainer}>
-          <Link href='management'>Customer Management</Link>
-          <Link href='management'>Seller Management</Link>
-          <Link href='management'>Product Management</Link>
-          <Link href='management'>Offer Management</Link>
-          <Link href='management'>Oder Management</Link>
-          <Link href='management'>Review</Link>
-          <Link href='management'>Transaction Management</Link>
-        </div>
-        <button className={styles.dropdownBtn} onClick={(e) => {}}>
-          <i className={styles.faCaretDown} />
-          Settings
-        </button>
-        <div className={styles.dropdownContainer}>
-          <Link href='management'>Profile Setting</Link>
-          <Link href='management'>Social Setting</Link>
-          <Link href='management'>Payment Setting</Link>
-        </div>
-        <button className='btn btn-gray m-10 p-10'>Logout</button>
-      </div>
-    */
-}
