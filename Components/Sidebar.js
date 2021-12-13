@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 import styles from "../styles/sidebar.module.scss";
 import Button from "./Button";
 
-function sidebar() {
+const Sidebar = () => {
+  const [dropDownIsOpen, setDropDownIsOpen] = useState(false);
+
+  const clickHandler = () => {
+    setDropDownIsOpen((prev) => !prev);
+  };
+
   return (
     <>
       <div className={styles.sidebar}>
@@ -26,92 +33,168 @@ function sidebar() {
                 </Link>
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Seller</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Customers</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Customer List</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Customer</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Sellers</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Sellers List</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Product</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Products</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Category List</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Brand List</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Product List</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Order</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Orders</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Orders List</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Return</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Returns</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Return Requests</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Transaction</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Reviews & Ratings</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Product Reviews</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Seller Reviews</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Reviews & Ratings</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Transactions</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Customer Transactions</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Seller Transactions</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Commission</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Commissions</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Commission Settings</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Sellers Commission</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Promotions</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Promotions</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Promotions</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Campaigns</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Subscriptions</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Subscriptions</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Newsletters</a>
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
-                <Link href='path'>
-                  <a>
-                    <span className=''></span>
-                    <span>Contracts</span>
-                  </a>
-                </Link>
+                <Button click={clickHandler} classes={styles.dropdownBtn}>
+                  <span className=''></span>
+                  <span>Contracts</span>
+                </Button>
+                {!dropDownIsOpen && (
+                  <div className={styles.dropdownContainer}>
+                    <Link href='path'>
+                      <a>Seller MOU</a>
+                    </Link>
+                    <Link href='path'>
+                      <a>Discount Partners</a>
+                    </Link>
+                  </div>
+                )}
               </li>
             </ul>
           </div>
@@ -119,6 +202,6 @@ function sidebar() {
       </div>
     </>
   );
-}
+};
 
-export default sidebar;
+export default Sidebar;

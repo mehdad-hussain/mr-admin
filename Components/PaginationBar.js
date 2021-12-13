@@ -1,19 +1,35 @@
+import Link from "next/link";
+
 import styles from "../styles/paginationBar.module.scss";
 
 const PaginationBar = () => {
   return (
     <>
       <div className={styles.pagination}>
-        <a href='#'>Previous</a>
-        <a className={styles.active} href='#'>
-          1
-        </a>
-        <a href='#'>2</a>
-        <a href='#'>3</a>
-        <a href='#'>4</a>
-        <a href='#'>5</a>
-        <a href='#'>6</a>
-        <a href='#'>Next</a>
+        <Link href='/'>
+          <a>Previous</a>
+        </Link>
+        <Link href='/'>
+          <a className={styles.active}>1</a>
+        </Link>
+        <Link href='/'>
+          <a>2</a>
+        </Link>
+        <Link href='/'>
+          <a>3</a>
+        </Link>
+        <Link href='/'>
+          <a>4</a>
+        </Link>
+        <Link href='/'>
+          <a>5</a>
+        </Link>
+        <Link href='/'>
+          <a>6</a>
+        </Link>
+        <Link href='/'>
+          <a>Next</a>
+        </Link>
       </div>
     </>
   );
